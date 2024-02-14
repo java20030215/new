@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "jsx": "preserve",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": ["ESNext", "DOM"],
+    "skipLibCheck": true,
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "@store/*": ["src/store/*"],
+      "@pages/*": ["src/pages/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@http/*": ["src/http/*"],
+      "@utils/*": ["src/utils/*"],
+      "@model/*": ["src/model/*"],
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "*.d.ts",
+    "vite.config.ts",
+    "_vitePlugins/*.ts"
+  ],
+  "exclude": ["node_modules", ".vscode-test"],
+  "references": [{ "path": "./tsconfig.node.json" }],
+  "types": ["vite/client"], // 👈 add this
+  "rootDirs": ["src/pages", "src/store", "src/hooks"]
+}
