@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref,reactive, computed,onBeforeMount,onMounted,onUpdated,onUnmounted } from 'vue'
-
 onBeforeMount(()=>{
   console.log('------------> onBeforeMount')
 })
@@ -14,11 +13,7 @@ onUnmounted(()=>{
   console.log('------------> onUnmounted')
 })
 const props = defineProps<{ msg: string }>()
-
 const emits = defineEmits(['update:msg'])
-
-
-
 const count = ref(0)
 
 const count2 = ref(1)
@@ -41,7 +36,6 @@ const updateMsg = ()=>{
   emits('update:msg', 'new msg')
 }
 </script>
-
 <template>
   <h1>{{ msg }}</h1>
   <h2>{{ count3 }}</h2>
