@@ -1,20 +1,36 @@
-<script setup lang="ts">
-import { onMounted, ref, provide } from "vue";
-
-const msg = ref<string>("Vite + Vue--------APP");
-provide("app-msg", msg.value);
-const show = ref<boolean>(true);
-const propsRef = ref<HTMLElement | null>(null);
-const watchRef = ref<HTMLElement | null>(null);
-onMounted(() => {
-  console.log("------------>propsRef", propsRef.value);
-  console.log("-------------->watchRef", watchRef.value);
-});
-</script>
-
 <template>
   <router-view></router-view>
+  <div>
+    <a href="https://vitejs.dev" target="_blank">
+      <img src="/vite.svg" class="logo" alt="Vite logo" />
+    </a>
+    <a href="https://vuejs.org/" target="_blank">
+      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
+    </a>
+  </div>
+  <Hello1 :msg="msg" />
+  <PropsSon2 title=""/>
+
 </template>
+
+<script>
+import Hello1 from './components/Hello1.vue';
+import PropsSon2 from './components/PropsSon2.vue';
+export default {
+  data() {
+    return {
+      msg: 'Vite + Vue--------APP'
+    };
+  },
+  components: {
+    Hello1,PropsSon2
+  },
+  mounted() {
+    console.log('------------>propsRef', this.$refs.propsRef);
+    console.log('-------------->watchRef', this.$refs.watchRef);
+  }
+}
+</script>
 
 <style scoped>
 .logo {

@@ -1,8 +1,7 @@
 <template>
-    <h1>Son2</h1>
+    <h1>{{ title }}</h1>
 </template>
 <script setup lang="ts">
-import { inject } from 'vue';
-const appMsg = inject('app-msg');
-console.log("🚀 ~ appMsg:", appMsg)
+import { defineProps } from 'vue';
+const props = defineProps<{ title: string }>();
 </script>
